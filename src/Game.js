@@ -1,11 +1,14 @@
 // Imports
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Grid from "./components/Grid";
 import Header from "./components/Header";
 import produce from "immer";
 
-const numRows = 26;
-const numCols = 43;
+// Number of cells
+const numRows = Math.floor(window.innerHeight / 33);
+const numCols = Math.floor(window.innerWidth / 28);
+
+// Neighbours operations
 const operations = [
   [-1, -1],
   [-1, 0],
@@ -18,10 +21,10 @@ const operations = [
 ];
 
 // Grid generation functions
-function generateEmptyGrid() {
+function generateEmptyGrid(rowsx, colsy) {
   const rows = [];
-  for (let i = 0; i < numRows; i++) {
-    rows.push(Array.from(Array(numCols), () => 0));
+  for (let i = 0; i < rowsx; i++) {
+    rows.push(Array.from(Array(colsy), () => 0));
   }
 
   return rows;

@@ -64,40 +64,47 @@ export default function Header({
     <div className="header">
       <h1 className="title">John Conway's Game of Life</h1>
       <div className="buttons">
-        <Button
-          onClick={() => handleStartStop()}
-          variant="contained"
-          startIcon={
-            isRunning ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />
-          }
-        >
-          {isRunning ? "Stop" : "Start"}
-        </Button>
-        <Button
-          onClick={() => handleClear()}
-          variant="contained"
-          startIcon={<DeleteRoundedIcon />}
-          style={{ marginLeft: "1rem" }}
-        >
-          Clear
-        </Button>
-        <Button
-          onClick={() => handleRandomize()}
-          variant="contained"
-          startIcon={<CasinoRoundedIcon />}
-          style={{ marginLeft: "1rem" }}
-        >
-          Randomize
-        </Button>
-        <Button
-          onClick={handleClickOpen}
-          variant="contained"
-          startIcon={<InfoIcon />}
-          style={{ marginLeft: "1rem" }}
-        >
-          ABOUT
-        </Button>
-      </div>
+        {" "}
+        <div className="buttons1">
+          <Button
+            onClick={() => handleStartStop()}
+            variant="contained"
+            startIcon={
+              isRunning ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />
+            }
+            style={{ margin: "0.5rem" }}
+          >
+            {isRunning ? "Stop" : "Start"}
+          </Button>
+          <Button
+            onClick={() => handleClear()}
+            variant="contained"
+            startIcon={<DeleteRoundedIcon />}
+            style={{ margin: "0.5rem" }}
+          >
+            Clear
+          </Button>
+        </div>
+        <div className="buttons2">
+          {" "}
+          <Button
+            onClick={() => handleRandomize()}
+            variant="contained"
+            startIcon={<CasinoRoundedIcon />}
+            style={{ margin: "0.5rem" }}
+          >
+            Randomize
+          </Button>
+          <Button
+            onClick={handleClickOpen}
+            variant="contained"
+            startIcon={<InfoIcon />}
+            style={{ margin: "0.5rem" }}
+          >
+            ABOUT
+          </Button>
+        </div>
+      </div>{" "}
       <Dialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

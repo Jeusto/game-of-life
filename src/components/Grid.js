@@ -5,7 +5,9 @@ export default function Grid({ grid, handleCellClick }) {
     let rowNumber = 0;
     return (
       <table className="grid">
-        <tbody>{grid.map((rowArray) => getRow(rowArray, rowNumber++))}</tbody>
+        <tbody className="gridBody">
+          {grid.map((rowArray) => getRow(rowArray, rowNumber++))}
+        </tbody>
       </table>
     );
   }
@@ -31,7 +33,7 @@ export default function Grid({ grid, handleCellClick }) {
           key={`${rowNumber}-${colNumber}`}
           className={`cell ${
             grid[rowNumber][colNumber] === 0 ? "dead" : "alive"
-          }`}
+          } `}
         ></div>
       </td>
     );
