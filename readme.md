@@ -8,6 +8,6 @@ Create an initial configuration and observe how it evolves.
 - Any live cell with more than three live neighbours dies, as if by overpopulation.
 - Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
-Try it here: https://gol.vercel.app/
+Try it here: https://gol-conway.vercel.app/
 
 ![demo](./public/demo.gif)
