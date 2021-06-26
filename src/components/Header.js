@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import PlayArrowRoundedIcon from "@material-ui/icons/PlayArrowRounded";
 import PauseRoundedIcon from "@material-ui/icons/PauseRounded";
@@ -13,7 +13,6 @@ import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import InfoIcon from "@material-ui/icons/Info";
 import Link from "@material-ui/core/Link";
-import Slider from "@material-ui/core/Slider";
 
 // Information modal
 const styles = (theme) => ({
@@ -46,16 +45,6 @@ const DialogTitle = withStyles(styles)((props) => {
   );
 });
 
-// Slider
-const useStyles = makeStyles({
-  root: {
-    width: 300,
-  },
-});
-function valuetext(value) {
-  console.log(`${value}°C`);
-}
-
 export default function Header({
   isRunning,
   handleStartStop,
@@ -70,7 +59,6 @@ export default function Header({
   const handleClose = () => {
     setOpen(false);
   };
-  const classes = useStyles();
 
   return (
     <div className="header">
@@ -110,33 +98,6 @@ export default function Header({
           ABOUT
         </Button>
       </div>
-
-      {!isRunning ? (
-        <Slider
-          style={{ marginTop: "1rem", width: "31rem", color: "#61afef" }}
-          defaultValue={300}
-          getAriaValueText={valuetext}
-          aria-labelledby="discrete-slider"
-          valueLabelDisplay="auto"
-          step={200}
-          marks
-          min={100}
-          max={2000}
-        />
-      ) : (
-        <Slider
-          style={{ marginTop: "1rem", width: "31rem", color: "gray" }}
-          defaultValue={300}
-          getAriaValueText={valuetext}
-          aria-labelledby="discrete-slider"
-          valueLabelDisplay="auto"
-          step={200}
-          marks
-          min={100}
-          max={2000}
-          disabled
-        />
-      )}
       <Dialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

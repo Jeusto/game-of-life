@@ -30,11 +30,7 @@ export default function Grid({ grid, handleCellClick }) {
           data-col={colNumber}
           key={`${rowNumber}-${colNumber}`}
           className={`cell ${
-            grid[rowNumber][colNumber] === 0
-              ? "dead"
-              : grid[rowNumber][colNumber] === 1
-              ? "justBorn"
-              : "alive"
+            grid[rowNumber][colNumber] === 0 ? "dead" : "alive"
           }`}
         ></div>
       </td>

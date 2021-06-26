@@ -65,18 +65,15 @@ code {
 .cell:hover {
   background-color: #5a6375;
 }
-
+.alive {
+  background-color: #61afef;
+  animation: alive 500ms;
+}
 .dead {
   animation: dead 500ms;
 }
-.justBorn {
-  background-color: #61afef;
-  animation: justBorn 500ms;
-}
-.alive {
-  background-color: #61afef;
-}
-@keyframes justBorn {
+
+@keyframes alive {
   from {
     transform: scale(0);
     border-radius: 100%;
@@ -96,9 +93,4 @@ code {
     background-color: #282c34;
     border-radius: 100%;
   }
-}
-
-.overpopulation {
-}
-.underpopulation {
 }
