@@ -90,10 +90,6 @@ code {
 }
 .alive {
   background-color: #61afef;
-  animation: ease-in-out alive 400ms;
-}
-.dead {
-  animation: ease-in-out dead 400ms;
 }
 
 @keyframes alive {

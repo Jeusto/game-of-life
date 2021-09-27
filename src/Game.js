@@ -1,5 +1,5 @@
 // Imports
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import Grid from "./components/Grid";
 import Header from "./components/Header";
 import produce from "immer";
